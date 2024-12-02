@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  /* General Reset */
+body, h1, h2, h3, p, a, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header Styling */
+.header {
+  background-color: #4a90e2;
+  padding: 20px;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar nav ul li {
+  margin: 0 15px;
+}
+
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #4a90e2, #50e3c2);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.hero p {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.hero .cta-btn {
+  background-color: #fff;
+  color: #4a90e2;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .cta-btn:hover {
+  background-color: #357ab8;
+  color: white;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 20px;
+  text-align: center;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #4a90e2;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="navbar">
+      <a href="#" class="logo">Brand</a>
+      <nav>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'register' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Sign In</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Our Website</h1>
+      <p>Your journey starts here</p>
+      <a href="#" class="cta-btn">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <h3>Feature 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Feature 2</h3>
+      <p>Nullam non urna nec odio volutpat cursus. Curabitur malesuada lectus id ante fermentum.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Feature 3</h3>
+      <p>Etiam sit amet turpis ac lacus tincidunt pretium eu non leo. Integer malesuada libero ac quam.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Brand. All rights reserved.</p>
+  </footer>
+</body>
+</html>
