@@ -60,3 +60,9 @@ def login_view(request):
             return redirect('register')   
     
     return render(request,'login.html')
+
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
