@@ -3,6 +3,8 @@ from django.shortcuts import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 
+from django.contrib.auth import authenticate,login,logout
+
 def home(request):
     return render(request,'home.html') 
 
@@ -41,11 +43,20 @@ def register(request):
         return render(request,'register.html')
 
 
-def login(request):
-    #code
-    # getting data from user(email and password)
-    #checking with db (exist or not)
-    #return true or false if true then login
-    #return false return to login
-    #redirect to home page
+def login_view(request):
+    if request.method=='POST':
+        email=request.POST['email']
+        password=request.POST['password']
+        #username getting
+        username=User.objects.get(email=email).username
+        # check credentails withdatabase
+        user=authenticate(request,username=username,password=password)
+        
+        # yedi user ko value true xa vaney 
+        if user is not None:
+            login(request,user)
+            return redirect('home')
+        else:
+            return redirect('register')   
+    
     return render(request,'login.html')

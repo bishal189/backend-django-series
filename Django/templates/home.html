@@ -148,7 +148,12 @@ body {
         <ul>
           <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="{% url 'register' %}">Sign Up</a></li>
-          <li><a href="{% url 'login' %}">Sign In</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="">Log Out</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Sign In</a></li>
+        {% endif %}
+
         </ul>
       </nav>
     </div>
