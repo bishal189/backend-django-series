@@ -7,6 +7,10 @@ class Musician(models.Model):
     created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)
 
+    # imagefield 
+    # folder name chai profile
+
+
     def __str__(self):
         return self.first_name
     
@@ -19,6 +23,7 @@ class Album(models.Model):
     num_stars = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)
+    album_image= models.ImageField(upload_to ='uploads/',null=True,blank=True) 
 
 
     def __str__(self):

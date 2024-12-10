@@ -123,3 +123,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# media (imagaes) settings
+# localhost:8000/media/1.jpg
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

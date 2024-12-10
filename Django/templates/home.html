@@ -177,6 +177,7 @@ body {
       <h3>{{item.name}}{{item.release_date}} </h3>
       <p>created by:</p>
       <p>{{item.artist.first_name}}</p>
+      <img style="width:250px;height:250px;" src='{{item.album_image.url}}' />
     </div>
     {% endfor %}
    
