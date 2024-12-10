@@ -171,18 +171,15 @@ body {
   </section>
 
   <section class="features">
+
+    {% for item in dinesh %}
     <div class="feature-card">
-      <h3>Feature 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+      <h3>{{item.name}}{{item.release_date}} </h3>
+      <p>created by:</p>
+      <p>{{item.artist.first_name}}</p>
     </div>
-    <div class="feature-card">
-      <h3>Feature 2</h3>
-      <p>Nullam non urna nec odio volutpat cursus. Curabitur malesuada lectus id ante fermentum.</p>
-    </div>
-    <div class="feature-card">
-      <h3>Feature 3</h3>
-      <p>Etiam sit amet turpis ac lacus tincidunt pretium eu non leo. Integer malesuada libero ac quam.</p>
-    </div>
+    {% endfor %}
+   
   </section>
 
   <footer class="footer">

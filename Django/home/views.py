@@ -2,11 +2,16 @@
 from django.shortcuts import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
-
 from django.contrib.auth import authenticate,login,logout
+from . models import Musician,Album
 
 def home(request):
-    return render(request,'home.html') 
+    album=Album.objects.all().order_by('-id')
+
+    context={
+        'dinesh':album
+    }
+    return render(request,'home.html',context) 
 
 
 def register(request):
