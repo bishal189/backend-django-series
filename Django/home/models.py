@@ -6,6 +6,8 @@ class Musician(models.Model):
     instrument = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)
+    new= models.ImageField(upload_to ='profile/',null=True,blank=True) 
+
 
     # imagefield 
     # folder name chai profile

@@ -69,5 +69,32 @@ def login_view(request):
 
 
 def logout_view(request):
+
     logout(request)
     return redirect('login')
+
+
+
+def album_view(request):
+    if request.method == 'POST':
+        name=request.POST['name']
+        date=request.POST['date']
+        rating=request.POST['rating']
+        image=request.FILES['file']
+        musicain=Musician.objects.get(id=1)
+        try:
+            # album=Album.objects.create(artist=musicain,name=name,release_date=date,num_stars=rating,album_image=image)
+            album=Album() 
+            album.artist=musicain
+            album.name=name
+            album.release_date=date
+            album.num_stars=rating
+            album.album_image=imag
+            album.save()
+            return redirect('home')
+
+        except: 
+            return redirect('album')
+        
+    else: 
+        return render(request,'album.html')
